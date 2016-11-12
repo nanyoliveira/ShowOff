@@ -16,6 +16,7 @@
 		69266C921DD65A8000B23A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69266C901DD65A8000B23A7C /* LaunchScreen.storyboard */; };
 		69266C9B1DD6635200B23A7C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69266C9A1DD6635200B23A7C /* ProfileViewController.m */; };
 		69266C9F1DD6699400B23A7C /* UserFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69266C9E1DD6699400B23A7C /* UserFeedTableViewCell.m */; };
+		69266CA31DD6728500B23A7C /* InstagramRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 69266CA21DD6728500B23A7C /* InstagramRequest.m */; };
 		B0E63AD00A42564E2E15450D /* libPods-ShowOff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4814A3F12AA1F6FF5700EFA /* libPods-ShowOff.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,9 @@
 		69266C9A1DD6635200B23A7C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		69266C9D1DD6699400B23A7C /* UserFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFeedTableViewCell.h; sourceTree = "<group>"; };
 		69266C9E1DD6699400B23A7C /* UserFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFeedTableViewCell.m; sourceTree = "<group>"; };
+		69266CA11DD6728500B23A7C /* InstagramRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramRequest.h; sourceTree = "<group>"; };
+		69266CA21DD6728500B23A7C /* InstagramRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramRequest.m; sourceTree = "<group>"; };
+		69266CA41DD69FDE00B23A7C /* ShowOff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShowOff.entitlements; sourceTree = "<group>"; };
 		F00AC6BD194441FED3DEBAED /* Pods-ShowOff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowOff.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowOff/Pods-ShowOff.release.xcconfig"; sourceTree = "<group>"; };
 		F4814A3F12AA1F6FF5700EFA /* libPods-ShowOff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShowOff.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0C22ED161F8F8C97E6A836 /* Pods-ShowOff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowOff.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShowOff/Pods-ShowOff.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		69266C7E1DD65A8000B23A7C /* ShowOff */ = {
 			isa = PBXGroup;
 			children = (
+				69266CA41DD69FDE00B23A7C /* ShowOff.entitlements */,
+				69266CA01DD6722D00B23A7C /* requests */,
 				69266C9C1DD6693D00B23A7C /* userFeed */,
 				69266C821DD65A8000B23A7C /* AppDelegate.h */,
 				69266C831DD65A8000B23A7C /* AppDelegate.m */,
@@ -105,6 +111,15 @@
 				69266C9E1DD6699400B23A7C /* UserFeedTableViewCell.m */,
 			);
 			name = userFeed;
+			sourceTree = "<group>";
+		};
+		69266CA01DD6722D00B23A7C /* requests */ = {
+			isa = PBXGroup;
+			children = (
+				69266CA11DD6728500B23A7C /* InstagramRequest.h */,
+				69266CA21DD6728500B23A7C /* InstagramRequest.m */,
+			);
+			name = requests;
 			sourceTree = "<group>";
 		};
 		8471B0309CD2C889E8165315 /* Pods */ = {
@@ -160,6 +175,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = QRJ893TJ32;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -249,6 +269,7 @@
 			files = (
 				69266C9F1DD6699400B23A7C /* UserFeedTableViewCell.m in Sources */,
 				69266C8D1DD65A8000B23A7C /* ShowOff.xcdatamodeld in Sources */,
+				69266CA31DD6728500B23A7C /* InstagramRequest.m in Sources */,
 				69266C871DD65A8000B23A7C /* ViewController.m in Sources */,
 				69266C841DD65A8000B23A7C /* AppDelegate.m in Sources */,
 				69266C811DD65A8000B23A7C /* main.m in Sources */,

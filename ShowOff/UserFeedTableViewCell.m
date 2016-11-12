@@ -8,17 +8,33 @@
 
 #import "UserFeedTableViewCell.h"
 
-@implementation UserFeedTableViewCell
+@interface UserFeedTableViewCell ()
+    @property (weak, nonatomic) IBOutlet UIImageView *userPicture;
+    @property (weak, nonatomic) IBOutlet UILabel *userLoginName;
+    @property (weak, nonatomic) IBOutlet UIImageView *postPicture;
+    @property (weak, nonatomic) IBOutlet UILabel *numberLikes;
+    @property (weak, nonatomic) IBOutlet UITextView *postStatus;
+    
+@end
 
-- (void)awakeFromNib {
+
+@implementation UserFeedTableViewCell
+    
+    
+    
+    
+    
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
-
-@end
+    
+    @end

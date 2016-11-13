@@ -27,13 +27,11 @@
     {
         [self logInInstagram:NULL];
     }
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //    verify if the user is already logged in and open profile in case yes
 }
 
 - (IBAction)logInInstagram:(id)sender
@@ -50,7 +48,6 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     BOOL tokenFromCallback = [self getTokenFromCallBack:request];
-    NSLog(@"----- token from callback got? %ul", tokenFromCallback);
     return tokenFromCallback;
 }
 

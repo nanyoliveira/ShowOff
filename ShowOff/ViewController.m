@@ -49,19 +49,22 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    return [self getTokenFromCallBack:request];
+    BOOL tokenFromCallback = [self getTokenFromCallBack:request];
+    NSLog(@"----- token from callback got? %ul", tokenFromCallback);
+    return tokenFromCallback;
 }
 
 
 -(BOOL)getTokenFromCallBack:(NSURLRequest *)request
 {
     NSString * url = [[request URL] absoluteString];
-    
     if([url hasPrefix: self.instagramRequest.getRedirectURL])
     {
         // extract and handle code
-        NSRange range = [url rangeOfString: @"code="];
-        [self accessTokenRequest:[url substringFromIndex: range.location+range.length]];
+        NSArray * urlDivided = [url componentsSeparatedByString:@"code="];
+        if([urlDivided count] >1) {
+             [self accessTokenRequest: urlDivided[1]];
+        }
         return NO;
     }
     return YES;

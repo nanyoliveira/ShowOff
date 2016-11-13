@@ -36,7 +36,16 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.userName.text = [NSString stringWithFormat:@"%@ - %@", [[User sharedManager] getFullName], [[User sharedManager] getUserBio] ]  ;
+    NSString * userNameBio ;
+    if([[User sharedManager] getUserBio].length > 1)
+    {
+        userNameBio = [NSString stringWithFormat:@"%@ - %@", [[User sharedManager] getFullName], [[User sharedManager] getUserBio] ]  ;
+    }
+    else {
+        userNameBio = [[User sharedManager] getFullName];
+    }
+    self.userName.text = userNameBio;
+    
     self.userInstaName.text = [[User sharedManager] getUsername];
     [self.userImage sd_setImageWithURL:[[User sharedManager] getUserProfilePicture]
                       placeholderImage:[UIImage imageNamed:@"avatar"]];
@@ -75,6 +84,7 @@
 - (IBAction)logOutButton:(id)sender
 {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"logged_in"];
+    [self.instagramRequest instagramLogOut];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 

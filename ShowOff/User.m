@@ -111,7 +111,12 @@
 
 -(NSArray*) userData
 {
-    return self._userData;
+    if(self._userData)
+    {
+        return self._userData;
+    }else{
+        return @[];
+    }
 }
 
 

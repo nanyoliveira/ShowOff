@@ -410,6 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QRJ893TJ32;
 				INFOPLIST_FILE = ShowOff/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Matt-Nany.ShowOff";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QRJ893TJ32;
 				INFOPLIST_FILE = ShowOff/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Matt-Nany.ShowOff";
 				PRODUCT_NAME = "$(TARGET_NAME)";

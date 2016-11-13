@@ -16,5 +16,6 @@
     -(void)getAccessTokenByPostWithCode: (NSString *)code andCaller:(UIViewController *)caller ;
     -(void) getUserData ;
     -(void) getUserDataProfile;
+    -(void)instagramLogOut;
 
 @end

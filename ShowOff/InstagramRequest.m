@@ -24,6 +24,9 @@ NSString * const authURL = @"https://api.instagram.com/oauth/authorize/";
 NSString * const tokenURL = @"https://api.instagram.com/oauth/access_token";
 NSString * const userData = @"https://api.instagram.com/v1/users/self/media/recent/";
 NSString * const userDataProfile = @"https://api.instagram.com/v1/users/self/";
+NSString * const logOut = @"https://instagram.com/accounts/logout/";
+
+
 
 
 -(NSString* )getAuthURL
@@ -72,7 +75,7 @@ NSString * const userDataProfile = @"https://api.instagram.com/v1/users/self/";
         
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"error post: %@", error);
+        NSLog(@"error post getting access token: %@", error);
         
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Oops..!"
@@ -106,7 +109,7 @@ NSString * const userDataProfile = @"https://api.instagram.com/v1/users/self/";
          
      } failure:^(NSURLSessionTask *operation, NSError *error)
      {
-         NSLog(@"Error: %@", error);
+         NSLog(@"Error getting user data: %@", error);
      }];
 }
 
@@ -131,11 +134,27 @@ NSString * const userDataProfile = @"https://api.instagram.com/v1/users/self/";
          
      } failure:^(NSURLSessionTask *operation, NSError *error)
      {
-         NSLog(@"Error: %@", error);
+         NSLog(@"Error user data profile: %@", error);
      }];
 }
 
 
+-(void)instagramLogOut
+{
+    
+    AFHTTPSessionManager *managerLogOut = [AFHTTPSessionManager manager];
+    managerLogOut.responseSerializer = [AFHTTPResponseSerializer serializer];
+    managerLogOut.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    
+    [managerLogOut GET:logOut  parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject)
+     {
+         
+         
+     } failure:^(NSURLSessionTask *operation, NSError *error)
+     {
+         NSLog(@"Error logg out: %@", error);
+     }];
+}
 
 
 @end

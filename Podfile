@@ -9,4 +9,6 @@ target 'ShowOff' do
 
   # Pods for ShowOff
 pod 'AFNetworking', '~> 3.0'
+pod 'SDWebImage', '~>3.8'
+
 end

@@ -21,12 +21,19 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     self.instagramRequest = [[InstagramRequest alloc]init];
+    
+    
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"logged_in"])
+    {
+        [self logInInstagram:NULL];
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    verify if the user is already logged in and open profile in case yes
+    //    verify if the user is already logged in and open profile in case yes
 }
 
 - (IBAction)logInInstagram:(id)sender
@@ -65,10 +72,12 @@
     [self.instagramRequest getAccessTokenByPostWithCode:code andCaller:self];
     self.webView.userInteractionEnabled = NO;
     self.webView.hidden = YES;
+    
 }
 
 -(void)completeLogin
 {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"logged_in"];
     [self performSegueWithIdentifier:@"profile" sender:self];
 }
 

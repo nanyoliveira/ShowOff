@@ -10,9 +10,11 @@
 #import <UIKit/UIKit.h>
 
 @interface InstagramRequest : NSObject
-    
+
     -(NSString* )getAuthURL;
     -(NSString* )getRedirectURL;
     -(void)getAccessTokenByPostWithCode: (NSString *)code andCaller:(UIViewController *)caller ;
+    -(void) getUserData ;
+    -(void) getUserDataProfile;
 
 @end

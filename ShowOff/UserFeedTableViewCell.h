@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UserFeedTableViewCell : UITableViewCell
+-(void)updateCellWithData: (NSDictionary *)cellData;
 
 @end
